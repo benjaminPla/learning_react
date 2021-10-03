@@ -1,19 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import H1 from "./components/h1.js";
-import Nav from "./components/nav.js";
-import Table from "./components/table.js";
+import Greet from "./Components/Greet.js";
+import Message from "./Components/Message.js";
+import Table from "./Components/Table.js";
+import Cat from "./Components/Cat.js";
+import LifeCycle from "./Components/LifeCycle.js";
+import Click from "./Components/Click.js";
+import Bind from "./Components/Bind.js";
 
-class SPA extends React.Component {
+sessionStorage.setItem("user-name", "Benjamin");
+
+class Index extends React.Component {
   render() {
     return (
       <div>
-        <Nav></Nav>
-        <H1></H1>
-        <Table></Table>
+        <Greet />
+        <Message />
+        <Table id="1" firstName="Benjamin" lastName="Pla" email="benjaminpla.dev@gmail.com" />
+        <Cat catName="Felix" eyeColor="Yellow" age="4" />
+        <LifeCycle />
+        <Click />
+        <Bind />
       </div>
     );
   }
 }
 
-ReactDOM.render(<SPA></SPA>, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById("root"));
