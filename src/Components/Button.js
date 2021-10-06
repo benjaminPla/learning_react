@@ -15,7 +15,7 @@ export default class Mood extends React.Component {
   render() {
     return (
       <div>
-        <h1>I'm feeling {this.state.mood}!</h1> 
+        <h1>I'm feeling {this.state.mood}!</h1>
         <button onClick={this.toggleMood}>{this.props.text}</button>
       </div>
     );

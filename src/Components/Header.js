@@ -1,7 +1,3 @@
 import React from "react";
 
-export default class Header extends React.Component {
-  render() {
-    return <h1>{this.props.text}</h1>;
-  }
-}
+export const Header = (props) => <h1>{props.text}</h1>;
