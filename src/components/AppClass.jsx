@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import NewTask from "./NewTask";
-import TasksList from "./TasksList";
+import NewTask from "./NewTask.jsx";
+import TasksList from "./TasksList.jsx";
 
 export default class AppClass extends Component {
   constructor(props) {
