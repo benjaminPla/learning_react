@@ -45,7 +45,7 @@ export default class AppClass extends Component {
   render() {
     return (
       <main>
-        <h1>Tasks</h1>
+        <h1>Tasks (class)</h1>
         <NewTask
           newTask={this.state.newTask}
           handleChange={this.handleChange}
