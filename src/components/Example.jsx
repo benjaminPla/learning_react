@@ -4,27 +4,30 @@ export default class Example extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "CamperBot",
+      inputValue: "",
+      name: "deaultValue",
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange({ target }) {
+    this.setState({ inputValue: target.value });
   }
   handleClick() {
-    this.setState({ name: "Alf" });
+    this.setState({ name: capitalizeFirstLetter(this.state.inputValue) });
   }
   render() {
     return (
       <div>
         <Navbar name={this.state.name} />
-        <button onClick={this.handleClick}>Click me!</button>
+        <Input value={this.state.inputValue} handleChange={this.handleChange} />
+        <Button handleClick={this.handleClick} />
       </div>
     );
   }
 }
 
 class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>
@@ -32,4 +35,16 @@ class Navbar extends React.Component {
       </div>
     );
   }
+}
+
+function Input(props) {
+  return <input type="text" value={props.value} onChange={props.handleChange} />;
+}
+
+function Button(props) {
+  return <button onClick={props.handleClick}>Change Name!</button>;
+}
+
+function capitalizeFirstLetter(name) {
+  return name.charAt(0).toUpperCase() + name.slice(1);
 }
