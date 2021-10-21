@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Styles from "./components/Styles.jsx";
+import IfElse from "./components/IfElse.jsx";
 
 function App() {
   return (
     <>
-      <Styles />
+      <IfElse />
     </>
   );
 }
