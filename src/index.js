@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Calculator from "./components/Calculator.jsx";
+import Todo from "./components/Todo.jsx";
 
 const App = () => (
   <>
-    <Calculator />
+    <Todo />
   </>
 );
 
