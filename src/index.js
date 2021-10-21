@@ -4,7 +4,8 @@ import IfElse from "./components/IfElse.jsx";
 import CheckUserAge from "./components/CheckUserAge.jsx";
 import ConditionalFromProps from "./components/ConditionalFromPorps.jsx";
 import ConditionalCSS from "./components/ConditionalCSS.jsx";
-import MyToDoList from "./components/ToDoList.jsx";
+import TodoList from "./components/TodoList.jsx";
+import Filter from "./components/Filter.jsx";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <CheckUserAge />
       <ConditionalFromProps />
       <ConditionalCSS />
-      <MyToDoList />
+      <TodoList />
+      <Filter />
     </>
   );
 }

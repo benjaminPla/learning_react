@@ -5,7 +5,7 @@ const textAreaStyles = {
   margin: 5,
 };
 
-export default class MyToDoList extends React.Component {
+export default class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,8 +28,8 @@ export default class MyToDoList extends React.Component {
     });
   }
   render() {
-    let items = this.state.toDoList.map((item) => {
-      return <li>{item}</li>;
+    let items = this.state.toDoList.map((item, index) => {
+      return <li key={index}>{item}</li>;
     });
     return (
       <div>
