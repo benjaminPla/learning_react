@@ -2,35 +2,46 @@ import React, { useState } from "react";
 
 export default function Todo() {
   const [inputValue, setInputValue] = useState("");
-  const handleChange = ({ target }) => {
+  const handleInputChange = ({ target }) => {
     setInputValue(target.value);
+  };
+  const [textAreaValue, setTextAreaValue] = useState("");
+  const handleTextAreaChange = ({ target }) => {
+    setTextAreaValue(target.value);
   };
 
   const [tasks, setTasks] = useState([]);
   const handleClick = () => {
     if (tasks.includes(inputValue)) return;
     if (!inputValue) return;
-    setTasks([...tasks, inputValue]);
+    setTasks([...tasks, { input: inputValue, textArea: textAreaValue }]);
     setInputValue("");
+    setTextAreaValue("");
   };
 
   const handleDelete = ({ target }) => {
-    setTasks(tasks.filter((task) => task !== target.id));
+    setTasks(tasks.filter((task) => task.input !== target.id));
   };
 
   return (
     <>
       <h1>Todo</h1>
-      <input onChange={handleChange} value={inputValue} placeholder="New Task" />
-      <button onClick={handleClick}>Add Taks</button>
-      <ul>
+      <div className="newTaskInputs">
+        <input onChange={handleInputChange} value={inputValue} placeholder="New Task" />
+        <button onClick={handleClick}>Add Taks</button>
+      </div>
+      <textarea onChange={handleTextAreaChange} value={textAreaValue}></textarea>
+      <ul className="tasks">
         {tasks.map((task, index) => {
           return (
             <li key={index}>
-              {task}
-              <span onClick={handleDelete} id={task}>
-                X
-              </span>
+              <div className="taskTitle">
+                {task.input}
+                <span onClick={handleDelete} id={task.input}>
+                  X
+                </span>
+              </div>
+              <div className="taskDescription">{task.textArea}</div>
             </li>
           );
         })}
