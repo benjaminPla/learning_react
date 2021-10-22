@@ -1,16 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppClass from "./components/AppClass.jsx";
-import AppFunction from "./components/AppFunction.jsx";
+import Todo from "./components/Todo.jsx";
 import "./index.css";
 
-function App() {
-  return (
-    <>
-      <AppClass />
-      <AppFunction />
-    </>
-  );
-}
+const App = () => (
+  <>
+    <Todo />
+  </>
+);
 
 ReactDOM.render(<App />, document.getElementById("root"));

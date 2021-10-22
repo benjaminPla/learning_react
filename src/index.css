@@ -1,87 +1,51 @@
-html, body {
-	height: 100%;
-  background-color: #ffffff;
-  text-align: center;
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
-}
-
-* {
-	font-family: Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
-}
-
-#app {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	padding: 8px;
-}
-
-h1 {
-  margin: 8px 0;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-input,
-textarea {
-  padding: 5px;
-}
-
-form button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px;
-}
-
-ul {
-  list-style: none;
-  text-align: center;
-}
-
-ul {
   padding: 0;
 }
 
-li {
-  background-color: Cornsilk;
-  border: 1px solid BurlyWood;
-  border-radius: 5px 2px;
-  margin: 8px 0;
+#root {
+  font-family: "Trebuchet MS", sans-serif;
+  padding: 1rem;
+  text-align: center;
 }
 
-li div {
-  position: relative;
+#root .newTaskInputs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 80px;
+      grid-template-columns: 1fr 80px;
 }
 
-li div button {
+#root textarea {
+  width: 100%;
+}
+
+#root .tasks {
+  list-style: none;
+}
+
+#root .tasks li {
+  border-radius: 0.5rem;
+  border: 1px solid lightsalmon;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+#root .tasks .taskTitle {
+  background-color: lightgoldenrodyellow;
+}
+
+#root .tasks .taskTitle span {
   position: absolute;
-  top: 0;
-  right: 0;
-  background-color: transparent;
-  border: 0;
-  padding: 10px;
-  font-weight: bolder;
+  right: 2rem;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-li div button:hover,
-li div button:focus {
-  box-shadow: 0 0 1px black;
+#root .tasks .taskDescription {
+  background-color: lightsalmon;
 }
-
-li h2 {
-  background-color: NavajoWhite;
-  margin: 0;
-  padding: 4px;
-}
-
-li p {
-  margin: 8px;
-}
+/*# sourceMappingURL=index.css.map */
