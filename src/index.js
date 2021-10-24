@@ -1,21 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import IfElse from "./components/IfElse.jsx";
-import CheckUserAge from "./components/CheckUserAge.jsx";
-import ConditionalFromProps from "./components/ConditionalFromPorps.jsx";
-import ConditionalCSS from "./components/ConditionalCSS.jsx";
-import TodoList from "./components/TodoList.jsx";
-import Filter from "./components/Filter.jsx";
+import NavBar from "./components/NavBar.jsx";
+import Link from "./components/Link.jsx";
+import "./index.css";
 
 function App() {
+  const [activeLink, setLink] = useState("1");
+  const handleClick = ({ target }) => {
+    setLink(target.getAttribute("link"));
+  };
   return (
     <>
-      <IfElse />
-      <CheckUserAge />
-      <ConditionalFromProps />
-      <ConditionalCSS />
-      <TodoList />
-      <Filter />
+      <NavBar handleClick={handleClick} />
+      <Link activeLink={activeLink} />
     </>
   );
 }
